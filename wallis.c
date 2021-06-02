@@ -2,14 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-
-float wallis_pi(int n){
-    float pi_2=(float)1;
-    for(int i=1;i<=n;i++) pi_2=(float)pi_2*(((float)4*(float)i*(float)i)/(((float)4*(float)i*(float)i)-(float)1));
-    return ((float)pi_2*(float)2);
-    
-}
-
+float wallis_pi(int);
 int main(void) {
   float pi;
   for (int i=0; i<5; i++) {
@@ -26,4 +19,13 @@ int main(void) {
 
     abort();}
   }
+}
+float wallis_pi(int n){
+    float pi_2=(float)1,m;
+    for(int i=1;i<=n;i++){
+        m=4*i*i;
+        pi_2*=(float)m/((float)m-1);
+    }
+    return ((float)pi_2*(float)2);
+    
 }
