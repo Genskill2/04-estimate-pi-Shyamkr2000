@@ -9,7 +9,7 @@ float mc_pi(long int n){
     for(long int i=0;i<=n;i++){
        x=frandom();
        y=frandom();
-       if((float)x*(float)x+(float)y*(float)y<=1)count1++;
+       if((float)x*(float)x+(float)y*(float)y<=(float)1)count1++;
        else count2++;
  
     }
