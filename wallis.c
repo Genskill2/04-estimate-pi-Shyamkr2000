@@ -4,9 +4,9 @@
 #include <math.h>
 
 float wallis_pi(int n){
-    float pi_2=1;
-    for(int i=1;i<=n;i++) pi_2=pi_2*((4*i*i)/((4*i*i)-1));
-    return (pi_2*2);
+    float pi_2=(float)1;
+    for(int i=1;i<=n;i++) pi_2=(float)pi_2*(((float)4*(float)i*(float)i)/(((float)4*(float)i*(float)i)-(float)1));
+    return ((float)pi_2*(float)2);
     
 }
 
@@ -27,6 +27,3 @@ int main(void) {
     abort();}
   }
 }
-
-
-
