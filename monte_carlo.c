@@ -4,16 +4,15 @@
 #include <math.h>
 float frandom();
 float mc_pi(long int n){
-    float x,y;
-    int count1=0,count2=0;
+    float x,y,pi;
+    int count=0;
     for(long int i=0;i<=n;i++){
        x=frandom();
        y=frandom();
-       if((float)x*(float)x+(float)y*(float)y<(float)1)count1++;
-       else count2++;
- 
+       if((float)x*(float)x+(float)y*(float)y<=(float)1)count++;
     }
-    return ((float)4*(float)count1/(float)count2);
+    pi=(((float)4*(float)count)/(float)n);
+    return pi;
 }
 
 float frandom() {
@@ -33,12 +32,14 @@ int main(void) {
   if (pi0 == pi1) {
       printf("Two separate estimates of pi are exactly the same. This is unlikely.\n");
       
-    abort();}
+    abort();
+}
 
   if (fabs(pi0 - pi1) > 0.05) {
       printf("Two separate estimates %f and %f are too different.\n", pi0, pi1);
       
-  abort();}
+  abort();
+}
 
     
   for (int i=2000; i<5000; i++) {
@@ -46,9 +47,7 @@ int main(void) {
     if (!(fabs(pi0 - M_PI) < 0.4)) {
       printf("Estimate with even %d iterations is %f which is not accurate enough.\n", i, pi0);
       
-   abort(); }
+  abort(); 
+}
   }
 }
-
-
-
